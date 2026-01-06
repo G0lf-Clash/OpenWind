@@ -34,3 +34,4 @@ npm run lint:fix
 npm run format
 npm run format:check
 ```
+<img width="1251" height="869" alt="OpenWind" src="https://github.com/user-attachments/assets/62e16a1d-9a66-4180-a947-2e500a30483e" />
