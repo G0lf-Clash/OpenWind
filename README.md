@@ -20,11 +20,9 @@ npm run preview
 - Club selection (all categories) + level selection with rarity caps
 - Wind / elevation / ball power inputs
 - Club distance slider (0–100%)
-- Rings output (Max/Mid/Min + 25/75 + distance rings)
+- Rings output (Max/Mid/Min)
 - Bag save/load (5 bags) backed by LocalStorage
-- Tournament notes (3 tournaments, front/back 9)
 - Minimal Mode (simplified UI)
-- Endbringer School table (wedge percentage table)
 
 All persistence is stored under LocalStorage keys prefixed with `gcaddy:`.
 
