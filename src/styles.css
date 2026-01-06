@@ -1,0 +1,415 @@
+:root {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #111;
+  background: #f6f7f9;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 140px;
+}
+
+/* Make a field take the full row in the controls flex layout */
+.field.wide {
+  flex: 1 1 100%;
+  min-width: 260px;
+}
+
+.field label {
+  font-size: 12px;
+  color: #374151;
+}
+
+.field input[type="text"],
+.field input[type="number"],
+.field select {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.field input[type="range"] {
+  width: 100%;
+}
+
+.rangeWrap {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Slider + percent input in one line, presets underneath the slider */
+.distanceGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 10px;
+  row-gap: 6px;
+  align-items: center;
+}
+
+.distanceGrid .rangeInput {
+  grid-column: 1 / 2;
+}
+
+.distanceGrid .pctInput {
+  grid-column: 2 / 3;
+}
+
+.distanceGrid .rangeMarks {
+  grid-column: 1 / 2;
+  margin-top: 0;
+}
+
+.rangeInput {
+  width: 100%;
+}
+
+.inlineRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.pctInput {
+  width: 88px;
+  text-align: right;
+}
+
+.pctRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+.rangeMarks {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #374151;
+  user-select: none;
+}
+
+.rangeMarks.dense {
+  display: grid;
+  grid-template-columns: repeat(17, 1fr);
+  gap: 2px;
+  font-size: 11px;
+}
+
+.rangeMarks.dense .rangeMark {
+  text-align: center;
+  padding: 2px 0;
+}
+
+.rangeMark {
+  padding: 2px 6px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.rangeMark:hover {
+  border-color: #d1d5db;
+}
+
+.rangeMark.active {
+  border-color: #111;
+  font-weight: 700;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn.primary {
+  border-color: #111;
+}
+
+.pillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.pill.active {
+  border-color: #111;
+  font-weight: 700;
+}
+
+.pill.enabled {
+  border-color: #111;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 12px;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.categoryTitle {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.clubList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.chip {
+  padding: 6px 8px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.chip.selected {
+  border-color: #111;
+  font-weight: 700;
+}
+
+.levelRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.levelBtn {
+  width: 34px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.levelBtn.selected {
+  border-color: #111;
+  font-weight: 700;
+}
+
+.levelBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.bigValue {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.kvItem {
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.kvLabel {
+  font-size: 12px;
+  color: #374151;
+}
+
+.kvValue {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table td {
+  padding: 6px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.toast {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(17, 24, 39, 0.92);
+  color: white;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  max-width: 420px;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 50;
+}
+
+.modalCard {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  width: min(720px, 100%);
+  max-height: 85vh;
+  overflow: auto;
+  padding: 14px;
+}
+
+.textarea {
+  width: 100%;
+  height: 44px;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.subtle {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.rangeMarks.dense10 {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  gap: 2px;
+  font-size: 11px;
+}
+
+.rangeMarks.dense10 .rangeMark {
+  text-align: center;
+  padding: 2px 0;
+}
+
+.kv.stacked {
+  grid-template-columns: 1fr;
+}
+
+
+.mmmStack {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mmmRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.mmmLabel {
+  font-size: 12px;
+  color: #374151;
+  letter-spacing: 0.08em;
+}
+
+.mmmValue {
+  font-size: 18px;
+  font-weight: 700;
+}
